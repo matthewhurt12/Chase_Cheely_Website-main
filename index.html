@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chase Cheely Landscaping - Professional Lawn Care Services</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Chase Cheely Landscaping</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION - Enhanced with better visuals -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Transform Your Lawn Into a Masterpiece</h1>
+                <p>Professional lawn care that saves you time while creating the outdoor space you've always dreamed of</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="cta-button">Get Free Quote</a>
+                    <a href="tel:555-123-4567" class="secondary-button">Call (555) 123-4567</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. PROBLEM/SOLUTION + STATS MERGED - Split-screen layout -->
+        <section class="problem-stats-combined">
+            <div class="container">
+                <div class="split-content">
+                    <div class="problems-side">
+                        <h2>Tired of Spending Your Weekends on Yard Work?</h2>
+                        <div class="problem-list">
+                            <div class="problem-item">
+                                <div class="problem-icon">⏰</div>
+                                <span>No time for lawn maintenance</span>
+                            </div>
+                            <div class="problem-item">
+                                <div class="problem-icon">🌧️</div>
+                                <span>Weather delays your schedule</span>
+                            </div>
+                            <div class="problem-item">
+                                <div class="problem-icon">🔧</div>
+                                <span>Equipment is expensive to buy/maintain</span>
+                            </div>
+                            <div class="problem-item">
+                                <div class="problem-icon">😰</div>
+                                <span>Worried about doing it wrong</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stats-side">
+                        <div class="big-stat">
+                            <div class="stat-number-large" data-count="500">0</div>
+                            <h3>Lawns Perfected</h3>
+                        </div>
+                        <div class="supporting-stats">
+                            <div class="mini-stat">
+                                <div class="stat-number" data-count="15" data-suffix="+">0</div>
+                                <span>Years Experience</span>
+                            </div>
+                            <div class="mini-stat">
+                                <div class="stat-number" data-count="98" data-suffix="%">0</div>
+                                <span>Customer Retention</span>
+                            </div>
+                            <div class="mini-stat">
+                                <div class="stat-number" data-count="24" data-suffix="/7">0</div>
+                                <span>Emergency Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SERVICES - 2 columns with imagery -->
+        <section class="services-preview">
+            <div class="container">
+                <h2>Complete Lawn Care Services</h2>
+                <p class="section-subtitle">From regular maintenance to landscape transformation</p>
+                <div class="services-grid-new">
+                    <div class="service-card-new">
+                        <div class="service-image">
+                            <div class="service-placeholder">🌿</div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Weekly Precision Mowing</h3>
+                            <p>Mowing, edging, trimming, and cleanup to keep your lawn looking perfect every week with professional-grade equipment.</p>
+                            <a href="services.html" class="service-link">Learn More →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-new">
+                        <div class="service-image">
+                            <div class="service-placeholder">🌱</div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Custom Landscape Design</h3>
+                            <p>Transform your outdoor space with custom design and professional installation that enhances your property value.</p>
+                            <a href="services.html" class="service-link">Learn More →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-new">
+                        <div class="service-image">
+                            <div class="service-placeholder">🌳</div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Expert Tree & Shrub Care</h3>
+                            <p>Professional pruning, trimming, and maintenance for healthy, beautiful plants that thrive year-round.</p>
+                            <a href="services.html" class="service-link">Learn More →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-new">
+                        <div class="service-image">
+                            <div class="service-placeholder">💧</div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Smart Irrigation Systems</h3>
+                            <p>Water-efficient sprinkler installation and maintenance that keeps your lawn green while reducing water waste.</p>
+                            <a href="services.html" class="service-link">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. HOW IT WORKS - Horizontal timeline -->
+        <section class="how-it-works-timeline">
+            <div class="container">
+                <h2>How It Works - Simple as 1, 2, 3</h2>
+                <div class="timeline-container">
+                    <div class="timeline-step">
+                        <div class="step-circle">
+                            <div class="step-number">1</div>
+                            <div class="step-icon">📅</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Get Your Free Quote</h3>
+                            <p>Quick call or online form. We'll assess your property and provide a detailed, no-obligation quote.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-connector"></div>
+                    <div class="timeline-step">
+                        <div class="step-circle">
+                            <div class="step-number">2</div>
+                            <div class="step-icon">🚜</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Schedule Your Service</h3>
+                            <p>Choose your service schedule. We'll handle all the details and send reminders before each visit.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-connector"></div>
+                    <div class="timeline-step">
+                        <div class="step-circle">
+                            <div class="step-number">3</div>
+                            <div class="step-icon">🏡</div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Enjoy Your Beautiful Lawn</h3>
+                            <p>Relax while we transform your property. Quality guaranteed with every service visit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. WHY CHOOSE US - Reduced to 4 key advantages -->
+        <section class="why-choose-us">
+            <div class="container">
+                <h2>Why Chase Cheely Landscaping?</h2>
+                <div class="advantages-grid-new">
+                    <div class="advantage">
+                        <div class="advantage-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Award-Winning Service</h3>
+                        <p>Recognized as the top landscaping company in the region for three consecutive years with 500+ satisfied customers.</p>
+                    </div>
+                    <div class="advantage">
+                        <div class="advantage-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                <path d="M8 12h8M12 8v8"/>
+                            </svg>
+                        </div>
+                        <h3>Eco-Friendly & Safe</h3>
+                        <p>Sustainable methods and organic products that protect your family, pets, and environment while delivering beautiful results.</p>
+                    </div>
+                    <div class="advantage">
+                        <div class="advantage-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Transparent Pricing</h3>
+                        <p>No hidden fees or surprise charges. You'll know exactly what you're paying before we start, with fully licensed and insured service.</p>
+                    </div>
+                    <div class="advantage">
+                        <div class="advantage-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <h3>Local & Responsive</h3>
+                        <p>Based in your community with fast response times, reliable scheduling, and personalized service you can count on.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. BEFORE/AFTER - Full-width slider -->
+        <section class="transformations-slider">
+            <div class="container">
+                <h2>See the Amazing Transformations</h2>
+                <p class="section-subtitle">Real results from real customers</p>
+            </div>
+            <div class="slider-container">
+                <div class="slider-track" id="transformationSlider">
+                    <div class="slide">
+                        <div class="before-after-images">
+                            <div class="before-image">
+                                <span class="image-label">BEFORE</span>
+                                <div class="placeholder-image">🏚️</div>
+                            </div>
+                            <div class="after-image">
+                                <span class="image-label">AFTER</span>
+                                <div class="placeholder-image">🏡</div>
+                            </div>
+                        </div>
+                        <div class="slide-caption">Backyard in Riverside → 6 weeks later</div>
+                    </div>
+                    <div class="slide">
+                        <div class="before-after-images">
+                            <div class="before-image">
+                                <span class="image-label">BEFORE</span>
+                                <div class="placeholder-image">🌾</div>
+                            </div>
+                            <div class="after-image">
+                                <span class="image-label">AFTER</span>
+                                <div class="placeholder-image">🌿</div>
+                            </div>
+                        </div>
+                        <div class="slide-caption">Front lawn in Oak Hill → 4 weeks later</div>
+                    </div>
+                    <div class="slide">
+                        <div class="before-after-images">
+                            <div class="before-image">
+                                <span class="image-label">BEFORE</span>
+                                <div class="placeholder-image">🍂</div>
+                            </div>
+                            <div class="after-image">
+                                <span class="image-label">AFTER</span>
+                                <div class="placeholder-image">🌺</div>
+                            </div>
+                        </div>
+                        <div class="slide-caption">Garden makeover in Pine Valley → 8 weeks later</div>
+                    </div>
+                </div>
+                <button class="slider-btn prev" onclick="previousSlide()">❮</button>
+                <button class="slider-btn next" onclick="nextSlide()">❯</button>
+            </div>
+        </section>
+
+        <!-- 7. TESTIMONIALS - Carousel under gallery -->
+        <section class="testimonials-carousel">
+            <div class="container">
+                <div class="testimonial-slider" id="testimonialSlider">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <p>"Chase and his team transformed our backyard into something magazine-worthy. Professional, reliable, and reasonably priced!"</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">SM</div>
+                                <div class="author-info">
+                                    <strong>Sarah M.</strong>
+                                    <span>Homeowner, Riverside</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <p>"Finally found a lawn care company I can trust. They show up when scheduled and do beautiful work every time."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">MR</div>
+                                <div class="author-info">
+                                    <strong>Mike R.</strong>
+                                    <span>Homeowner, Oak Hill</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <p>"Worth every penny! Our property value increased and we get compliments from neighbors all the time."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">JL</div>
+                                <div class="author-info">
+                                    <strong>Jennifer L.</strong>
+                                    <span>Homeowner, Pine Valley</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. SEASONAL SERVICES - Replaced with link -->
+        <section class="seasonal-link">
+            <div class="container">
+                <div class="seasonal-cta">
+                    <h3>Need year-round lawn care?</h3>
+                    <p>Spring cleanup to winter prep - we handle every season</p>
+                    <a href="services.html" class="secondary-button">See our seasonal plans →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FINAL CTA - Enhanced -->
+        <section class="final-cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready for the Lawn You've Always Wanted?</h2>
+                    <p>Join hundreds of satisfied customers who trust us with their lawn care needs</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="cta-button large">Get Your Free Quote Today</a>
+                        <div class="phone-cta">
+                            <span>or call us directly:</span>
+                            <a href="tel:555-123-4567" class="phone-number">(555) 123-4567</a>
+                        </div>
+                    </div>
+                    <div class="guarantees">
+                        <span>✅ Free Estimates</span>
+                        <span>✅ No Obligation</span>
+                        <span>✅ Licensed & Insured</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta" id="mobileCTA">
+        <div class="sticky-cta-content">
+            <a href="contact.html" class="sticky-quote-btn">Get Free Quote</a>
+            <a href="tel:555-123-4567" class="sticky-call-btn">Call (555) 123-4567</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Chase Cheely Landscaping. All rights reserved.</p>
+            <p>Professional Lawn Care Services | Licensed & Insured</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

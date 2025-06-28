@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews & Pricing - Chase Cheely Landscaping</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2d5a3d;
+            --accent-green: #4a8f5f;
+            --light-green: #e8f5e9;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: "🌿";
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--accent-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .cta-button {
+            background: var(--accent-green);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(74, 143, 95, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--primary-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(74, 143, 95, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--primary-green);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Testimonials Section */
+        .testimonials-container {
+            background: var(--light-green);
+            padding: 4rem 5%;
+            margin-top: 4rem;
+        }
+
+        .testimonials-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: "\201C";
+            font-size: 4rem;
+            color: var(--accent-green);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--primary-green);
+        }
+
+        .testimonial-rating {
+            color: #ffc107;
+            margin-top: 0.5rem;
+        }
+
+        /* Pricing Cards */
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            border: 2px solid var(--accent-green);
+        }
+
+        .pricing-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-green);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card h3 {
+            color: var(--primary-green);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-price {
+            font-size: 2.5rem;
+            color: var(--accent-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price span {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+        }
+
+        .pricing-features li::before {
+            content: "✓ ";
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary-green);
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: var(--light-green);
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 300px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-green);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .section {
+                padding: 3rem 5%;
+            }
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-circle {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--light-green);
+            border-top: 5px solid var(--accent-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Chase Chile Landscaping</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="cta-button">Get Quote</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section">
+            <div class="testimonials-container">
+                <div class="testimonials-wrapper">
+                    <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 1rem; font-size: 2.5rem;">What Our Clients Say</h2>
+                    <p style="text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto;">Don't just take our word for it - hear from our satisfied customers</p>
+                    
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"Chase Chile Landscaping transformed our overgrown yard into a beautiful oasis. Their attention to detail and professionalism is unmatched. Highly recommend!"</p>
+                            <p class="testimonial-author">- Sarah Johnson</p>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"We've been using their services for 3 years now. Always on time, fair pricing, and our lawn has never looked better. They're the best in the business!"</p>
+                            <p class="testimonial-author">- Mike Thompson</p>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <p class="testimonial-text">"The team is professional, efficient, and genuinely cares about their work. They went above and beyond with our landscaping project. Couldn't be happier!"</p>
+                            <p class="testimonial-author">- Emily Davis</p>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pricing Section -->
+            <div style="max-width: 1200px; margin: 4rem auto 0; padding: 0 5%;">
+                <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 1rem; font-size: 2.5rem;">Service Packages</h2>
+                <p style="text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto;">Choose the package that best fits your needs</p>
+                
+                <div class="pricing-container">
+                    <div class="pricing-card">
+                        <h3>Basic Care</h3>
+                        <div class="pricing-price">$49<span>/visit</span></div>
+                        <ul class="pricing-features">
+                            <li>Lawn mowing</li>
+                            <li>Edge trimming</li>
+                            <li>Grass clipping cleanup</li>
+                            <li>Monthly service</li>
+                        </ul>
+                        <a href="contact.html" class="cta-button">Get Started</a>
+                    </div>
+                    
+                    <div class="pricing-card featured">
+                        <h3>Premium Care</h3>
+                        <div class="pricing-price">$99<span>/visit</span></div>
+                        <ul class="pricing-features">
+                            <li>Everything in Basic</li>
+                            <li>Weed control</li>
+                            <li>Fertilization</li>
+                            <li>Bi-weekly service</li>
+                            <li>Priority scheduling</li>
+                        </ul>
+                        <a href="contact.html" class="cta-button">Get Started</a>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Complete Care</h3>
+                        <div class="pricing-price">$149<span>/visit</span></div>
+                        <ul class="pricing-features">
+                            <li>Everything in Premium</li>
+                            <li>Landscaping maintenance</li>
+                            <li>Seasonal cleanup</li>
+                            <li>Weekly service</li>
+                            <li>24/7 support</li>
+                        </ul>
+                        <a href="contact.html" class="cta-button">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div style="max-width: 1200px; margin: 4rem auto 0; padding: 0 5%;">
+                <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 2rem; font-size: 2.5rem;">Frequently Asked Questions</h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How often should I have my lawn mowed?
+                        </div>
+                        <div class="faq-answer">
+                            During the growing season (spring and summer), we recommend weekly or bi-weekly mowing to maintain optimal lawn health. In fall and winter, monthly service is usually sufficient. We'll work with you to create a schedule that fits your lawn's specific needs.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Do you provide free estimates?
+                        </div>
+                        <div class="faq-answer">
+                            Yes! We offer free, no-obligation estimates for all our services. Simply fill out our contact form or give us a call, and we'll schedule a convenient time to assess your property and provide a detailed quote.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Are you licensed and insured?
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely! Chase Chile Landscaping is fully licensed and insured. We carry comprehensive liability insurance and all our employees are covered by workers' compensation. Your property and peace of mind are protected.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What areas do you service?
+                        </div>
+                        <div class="faq-answer">
+                            We proudly serve the greater metropolitan area and surrounding communities within a 25-mile radius. Contact us to confirm we service your specific location - we're always looking to expand our service area!
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Do I need to be home during service?
+                        </div>
+                        <div class="faq-answer">
+                            No, you don't need to be home. Once we establish a service schedule, our crews will complete the work as agreed. We'll notify you before arrival and can send photos of completed work upon request.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Chase Chile Landscaping. All rights reserved.</p>
+        <p>Professional Lawn Care Services | Licensed & Insured</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">📘</a>
+            <a href="#" aria-label="Instagram">📷</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+    </footer>
+
+    <script>
+        // Page Loader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').classList.add('fade-out');
+            }, 500);
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Toggle FAQ
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const allFaqItems = document.querySelectorAll('.faq-item');
+            
+            // Close all other FAQ items
+            allFaqItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle current FAQ item
+            faqItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html> 
